@@ -5,6 +5,7 @@ Follow these exercises to learn how to use Watsonx Code Assistant and GitHub wor
 ---
 
 ## Exercise 1: Explain YAML Files
+**Objective**: Understand the structure and purpose of YAML files using Watsonx Code Assistant.
 
 1. Open `yaml-files/nginx-deployment.yaml` in Visual Studio Code.
 2. Use Watsonx Code Assistant to explain the file:
@@ -16,15 +17,26 @@ Follow these exercises to learn how to use Watsonx Code Assistant and GitHub wor
    /explain @nginx-service.yaml
    ```
 
+---
+
 ## Exercise 2: Generate Documentation
+**Objective**: Generate professional-grade documentation for YAML files with Watsonx Code Assistant.
+
 1. Use Watsonx Code Assistant to generate documentation for each YAML file:
    ```bash
    /document @nginx-deployment.yaml
+   ```
+2. Repeat for `nginx-service.yaml`:
+   ```bash
    /document @nginx-service.yaml
    ```
-2. Save the output as `README.md` in the `yaml-files/` directory.
+3. Save the output as `README.md` in the `yaml-files/` directory.
+
+---
 
 ## Exercise 3: Enhance the YAML Files
+**Objective**: Improve the YAML files by adding resource limits and probes.
+
 1. Add resource limits to `nginx-deployment.yaml` using Watsonx:
    ```bash
    Add resource limits for CPU and memory to @nginx-deployment.yaml
@@ -34,7 +46,11 @@ Follow these exercises to learn how to use Watsonx Code Assistant and GitHub wor
    Add liveness and readiness probes to @nginx-deployment.yaml
    ```
 
+---
+
 ## Exercise 4: Make and Commit Your Changes
+**Objective**: Practice using Git commands to track and push changes to GitHub.
+
 1. Check the status of your changes:
    ```bash
    git status
@@ -55,8 +71,16 @@ Follow these exercises to learn how to use Watsonx Code Assistant and GitHub wor
    ```bash
    git push origin my-enhancements
    ```
+
+---
+
 ## Exercise 5: Collaborate with Pull Requests and Issues
+
+---
+
 ### **Step 1: Create a Pull Request (PR)**
+**Objective**: Propose your changes for review by submitting a Pull Request to the original repository.
+
 1. Navigate to your forked repository on GitHub.
 2. Click on the **Pull Requests** tab.
 3. Click the **New Pull Request** button.
@@ -73,6 +97,8 @@ Follow these exercises to learn how to use Watsonx Code Assistant and GitHub wor
 ---
 
 ### **Step 2: Review and Comment on Peer Pull Requests**
+**Objective**: Foster collaboration by reviewing and providing feedback on Pull Requests submitted by peers.
+
 1. Go to the **Pull Requests** tab in the base repository.
 2. Review PRs submitted by other participants:
    - Open a PR and read through the description and code changes.
@@ -85,9 +111,11 @@ Follow these exercises to learn how to use Watsonx Code Assistant and GitHub wor
 ---
 
 ### **Step 3: Create a GitHub Issue**
+**Objective**: Suggest enhancements or propose new tasks using GitHub Issues.
+
 1. Go to the **Issues** tab in the base repository.
 2. Click the **New Issue** button.
-3. Create an issue to suggest further enhancements. For example:
+3. Create an issue to propose an enhancement. For example:
    - **Title**: Add a Node.js deployment YAML.
    - **Description**:
      - "Propose adding a new YAML file for deploying a simple Node.js application. This can include readiness and liveness probes and resource limits similar to the NGINX example."
@@ -95,6 +123,16 @@ Follow these exercises to learn how to use Watsonx Code Assistant and GitHub wor
 
 ---
 
-Happy learning!
+### **Optional Challenge**
+1. Add a new YAML file for deploying a Redis service.
+2. Enhance the YAML file with:
+   - Resource limits for CPU and memory.
+   - Liveness and readiness probes.
+3. Document the YAML file using Watsonx Code Assistant.
+4. Submit your work via a Pull Request for review.
+
+---
+
+Happy learning and collaborating!
 
 ---
