@@ -34,23 +34,66 @@ Follow these exercises to learn how to use Watsonx Code Assistant and GitHub wor
    Add liveness and readiness probes to @nginx-deployment.yaml
    ```
 
-## Exercise 4: Collaborative Workflow with GitHub
-1. Commit and push your changes to your forked repository:
+## Exercise 4: Make and Commit Your Changes
+1. Check the status of your changes:
+   ```bash
+   git status
+   ```
+2. Stage all your changes:
    ```bash
    git add .
-   git commit -m "Enhance YAML files with resource limits and probes"
-   git push origin main
    ```
-2. Create a Pull Request to this repository:
-   - Go to your forked repository on GitHub.
-   - Click on the **Pull Requests** tab.
-   - Click the **New Pull Request** button.
-   - Select the base repository and branch to merge your changes.
-   - Title: Enhance YAML files with resource limits and probes.
-   - Description: Briefly describe your changes.
-   - Click **Create Pull Request**.
-3. Review and comment on each other’s Pull Requests.
-4. Create an issue to suggest further enhancements, such as adding a Node.js deployment YAML.
+3. Confirm the staged changes:
+   ```bash
+   git status
+   ```
+4. Commit your changes with a descriptive message:
+   ```bash
+   git commit -m "Add liveness and readiness probes to nginx-deployment.yaml"
+   ```
+5. Push your branch to your fork:
+   ```bash
+   git push origin my-enhancements
+   ```
+## Exercise 5: Collaborate with Pull Requests and Issues
+### **Step 1: Create a Pull Request (PR)**
+1. Navigate to your forked repository on GitHub.
+2. Click on the **Pull Requests** tab.
+3. Click the **New Pull Request** button.
+4. In the PR interface:
+   - Select the base repository (`rsergio07/ai-watsonx-github`) and branch (e.g., `main`) as the target for your PR.
+   - Select the branch with your changes (e.g., `my-enhancements`) as the source branch.
+5. Add a clear and descriptive title, such as:
+   - *Enhance YAML files with resource limits and probes.*
+6. Write a brief but informative description of your changes, highlighting:
+   - The modifications you made (e.g., added resource limits, liveness probes).
+   - The purpose of the changes and any relevant context.
+7. Click **Create Pull Request** to submit your PR.
+
+---
+
+### **Step 2: Review and Comment on Peer Pull Requests**
+1. Go to the **Pull Requests** tab in the base repository.
+2. Review PRs submitted by other participants:
+   - Open a PR and read through the description and code changes.
+   - Leave constructive comments, such as:
+     - Suggestions for improvement.
+     - Questions about specific changes.
+     - Positive feedback for well-written code or creative solutions.
+3. Mark PRs as "Approved" or suggest changes as needed.
+
+---
+
+### **Step 3: Create a GitHub Issue**
+1. Go to the **Issues** tab in the base repository.
+2. Click the **New Issue** button.
+3. Create an issue to suggest further enhancements. For example:
+   - **Title**: Add a Node.js deployment YAML.
+   - **Description**:
+     - "Propose adding a new YAML file for deploying a simple Node.js application. This can include readiness and liveness probes and resource limits similar to the NGINX example."
+4. Assign the issue to yourself or a peer to work on collaboratively.
+
+---
 
 Happy learning!
 
