@@ -42,9 +42,15 @@ Follow these exercises to learn how to use Watsonx Code Assistant and GitHub wor
    git push origin main
    ```
 2. Create a Pull Request to this repository:
+   - Go to your forked repository on GitHub.
+   - Click on the **Pull Requests** tab.
+   - Click the **New Pull Request** button.
+   - Select the base repository and branch to merge your changes.
    - Title: Enhance YAML files with resource limits and probes.
    - Description: Briefly describe your changes.
-3. Create an issue to suggest further enhancements, such as adding a Node.js deployment YAML.
+   - Click **Create Pull Request**.
+3. Review and comment on each other’s Pull Requests.
+4. Create an issue to suggest further enhancements, such as adding a Node.js deployment YAML.
 
 Happy learning!
 
