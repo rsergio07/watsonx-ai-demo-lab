@@ -123,16 +123,6 @@ Follow these exercises to learn how to use Watsonx Code Assistant and GitHub wor
 
 ---
 
-### **Optional Challenge**
-1. Add a new YAML file for deploying a Redis service.
-2. Enhance the YAML file with:
-   - Resource limits for CPU and memory.
-   - Liveness and readiness probes.
-3. Document the YAML file using Watsonx Code Assistant.
-4. Submit your work via a Pull Request for review.
-
----
-
 Happy learning and collaborating!
 
 ---
