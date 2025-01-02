@@ -45,6 +45,8 @@ Follow these exercises to learn how to use Watsonx Code Assistant and GitHub wor
    ```bash
    Add liveness and readiness probes to @nginx-deployment.yaml
    ```
+   
+**Note**: Make sure to update your local `nginx-deployment.yaml` file with the code suggested by Watsonx Code Assistant. This step ensures that the file contains the latest enhancements, so the next exercise will work as expected.
 
 ---
 
