@@ -4,6 +4,17 @@ Welcome to the AI Watsonx and GitHub Sandbox repository! This repository provide
 
 ---
 
+## Table of Contents
+- [Repository Contents](#repository-contents)
+- [Getting Started](#getting-started)
+  - [Step 1: Fork the Repository](#step-1-fork-the-repository)
+  - [Step 2: Clone Your Fork Locally](#step-2-clone-your-fork-locally)
+  - [Step 3: Create a New Branch](#step-3-create-a-new-branch)
+- [Contribution Guidelines](#contribution-guidelines)
+- [License](#license)
+
+---
+
 ## Repository Contents
 
 ### YAML Files (Located in `yaml-files/`)
@@ -11,6 +22,7 @@ Welcome to the AI Watsonx and GitHub Sandbox repository! This repository provide
   Defines a Kubernetes Deployment for running an NGINX application with:
   - 3 replicas of the NGINX pod.
   - Resource limits for CPU and memory.
+  - Liveness and readiness probes.
 
 - **`nginx-service.yaml`**  
   Defines a Kubernetes Service for exposing the NGINX Deployment with:
@@ -24,6 +36,12 @@ Welcome to the AI Watsonx and GitHub Sandbox repository! This repository provide
 ---
 
 ## Getting Started
+
+### Prerequisites
+- Git
+- Kubernetes
+- Watsonx Code Assistant
+- Visual Studio Code (or any other code editor)
 
 ### Step 1: Fork the Repository
 1. Click the **Fork** button at the top-right corner of this repository's page.
@@ -54,6 +72,26 @@ Cloning downloads the repository to your local machine, so you can work on it us
 
 *Why?*  
 Working on a new branch helps keep your changes isolated from the main branch. This makes it easier to manage and collaborate on different tasks.
+
+---
+
+## Contribution Guidelines
+
+We welcome contributions! Please follow these steps to contribute:
+
+1. Fork the repository.
+2. Create a new branch for your changes.
+3. Make your changes and commit them with clear and concise messages.
+4. Push your changes to your fork.
+5. Create a pull request to the `main` branch of this repository.
+
+For detailed guidelines, please refer to our [CONTRIBUTING.md](CONTRIBUTING.md) file.
+
+---
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ---
 
