@@ -55,7 +55,8 @@ Include the following sections in your `README.md` file:
   ```
 
 ### 8. Collaborate Using Pull Requests
-- Create at least one pull request (PR) to merge a feature branch into `main`.
+- Create at least one issue in your repository with a task to complete.
+- Then create at least one pull request (PR) to merge a feature branch into `main`.
 - Use detailed PR descriptions to explain the changes made or new files added.
 - Review the PR and, if satisfied, approve and merge it.
 
