@@ -5,14 +5,18 @@ Follow these exercises to learn how to use Watsonx Code Assistant and GitHub wor
 ---
 
 ## Exercise 1: Explain YAML Files
+
 **Objective**: Understand the structure and purpose of YAML files using Watsonx Code Assistant.
 
 1. Open `yaml-files/nginx-deployment.yaml` in Visual Studio Code.
 2. Use Watsonx Code Assistant to explain the file:
+
     ```bash
     /explain @nginx-deployment.yaml
     ```
+
 3. Repeat for `nginx-service.yaml`:
+
     ```bash
     /explain @nginx-service.yaml
     ```
@@ -20,13 +24,17 @@ Follow these exercises to learn how to use Watsonx Code Assistant and GitHub wor
 ---
 
 ## Exercise 2: Enhance the YAML Files
+
 **Objective**: Improve the YAML files by adding resource limits and probes.
 
 1. Add resource limits to `nginx-deployment.yaml` using Watsonx:
+
     ```bash
     Add resource limits for CPU and memory to @nginx-deployment.yaml
     ```
+
 2. Add liveness and readiness probes to the containers:
+
     ```bash
     Add liveness and readiness probes to @nginx-deployment.yaml
     ```
@@ -36,40 +44,55 @@ Follow these exercises to learn how to use Watsonx Code Assistant and GitHub wor
 ---
 
 ## Exercise 3: Generate Documentation
+
 **Objective**: Generate professional-grade documentation for YAML files with Watsonx Code Assistant.
 
 1. Use Watsonx Code Assistant to generate documentation for each YAML file:
+
     ```bash
     /document @nginx-deployment.yaml
     ```
+
 2. Repeat for `nginx-service.yaml`:
+
     ```bash
     /document @nginx-service.yaml
     ```
+
 3. Save the output as `README.md` in the `yaml-files/` directory.
 
 ---
 
 ## Exercise 4: Make and Commit Your Changes
+
 **Objective**: Practice using Git commands to track and push changes to GitHub.
 
 1. Check the status of your changes:
+
     ```bash
     git status
     ```
+
 2. Stage all your changes:
+
     ```bash
     git add .
     ```
+
 3. Confirm the staged changes:
+
     ```bash
     git status
     ```
+
 4. Commit your changes with a descriptive message:
+
     ```bash
     git commit -m "Enhance nginx-deployment.yaml with resource limits and probes, and generate documentation"
     ```
+
 5. Push your branch to your fork:
+
     ```bash
     git push origin my-enhancements
     ```
@@ -81,6 +104,7 @@ Follow these exercises to learn how to use Watsonx Code Assistant and GitHub wor
 ---
 
 ### **Step 1: Create a Pull Request (PR)**
+
 **Objective**: Propose your changes for review by submitting a Pull Request to the original repository.
 
 1. Navigate to your forked repository on GitHub.
@@ -99,6 +123,7 @@ Follow these exercises to learn how to use Watsonx Code Assistant and GitHub wor
 ---
 
 ### **Step 2: Review and Comment on Peer Pull Requests**
+
 **Objective**: Foster collaboration by reviewing and providing feedback on Pull Requests submitted by peers.
 
 1. Go to the **Pull Requests** tab in the base repository.
@@ -113,6 +138,7 @@ Follow these exercises to learn how to use Watsonx Code Assistant and GitHub wor
 ---
 
 ### **Step 3: Create a GitHub Issue**
+
 **Objective**: Suggest enhancements or propose new tasks using GitHub Issues.
 
 1. Go to the **Issues** tab in the base repository.
