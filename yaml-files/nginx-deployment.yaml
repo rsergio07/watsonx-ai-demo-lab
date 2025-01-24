@@ -1,19 +1,43 @@
-apiVersion: apps/v1
-kind: Deployment
+// Assisted by watsonx Code Assistant 
+# nginx-deployment.yaml
+apiVersion: apps/v1 # Kubernetes API version for Deployments
+kind: Deployment # Type of resource being defined
 metadata:
-  name: nginx-deployment
+  name: nginx-deployment # Name of the Deployment resource
 spec:
-  replicas: 3
+  replicas: 3 # Number of replicas to create
   selector:
     matchLabels:
-      app: nginx
+      app: nginx # Label selector to match pods
   template:
     metadata:
       labels:
-        app: nginx
+        app: nginx # Labels to apply to the pod template
     spec:
       containers:
-      - name: nginx
-        image: nginx:latest
+      - name: nginx # Name of the container
+        image: nginx:latest # Image to use for the container
         ports:
-        - containerPort: 80
+        - containerPort: 80 # Port to expose on the container
+resources: 
+  limits: 
+    cpu: "250m" # CPU limit for the container
+    memory: "512Mi" # Memory limit for the container
+livenessProbe: httpGet: 
+  path: / # Path to use for the liveness probe
+  port: 80 # Port to use for the liveness probe
+  initialDelaySeconds: 3 # Initial delay for the liveness probe
+  periodSeconds: 3 # Period for the liveness probe
+readinessProbe: httpGet: 
+  path: / # Path to use for the readiness probe
+  port: 80 # Port to use for the readiness probe
+  initialDelaySeconds: 5 # Initial delay for the readiness probe
+  periodSeconds: 5 # Period for the readiness probe
+
+
+
+
+
+
+
+
