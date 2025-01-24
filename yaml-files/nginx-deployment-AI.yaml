@@ -1,0 +1,40 @@
+// Assisted by watsonx Code Assistant 
+# nginx-deployment.yaml
+apiVersion: apps/v1 # Kubernetes API version for Deployments
+kind: Deployment # Type of resource being defined
+metadata: # Metadata for the Deployment
+  name: nginx-deployment # Name of the Deployment
+spec: # Specification for the Deployment
+  replicas: 3 # Number of replicas to deploy
+  selector: # Selector to match pods for the Deployment
+    matchLabels:
+      app: nginx # Label to match pods for the Deployment
+  template: # Template for the pods in the Deployment
+    metadata: # Metadata for the pods
+      labels:
+        app: nginx # Label for the pods
+    spec: # Specification for the pods
+      containers: # List of containers in the pods
+        - name: nginx # Name of the container
+          image: nginx:latest # Image for the container
+          ports: # List of ports to expose in the container
+            - containerPort: 80 # Port to expose in the container
+          resources: # Resource limits and requests for the container
+            limits: # Resource limits for the container
+              cpu: "500m" # CPU limit for the container
+              memory: "1Gi" # Memory limit for the container
+              requests: # Resource requests for the container
+                cpu: "250m" # CPU request for the container
+                memory: "512Mi" # Memory request for the container
+          livenessProbe: # Liveness probe for the container
+            httpGet: # HTTP GET request for the probe
+              path: / # Path for the probe
+              port: 80 # Port for the probe
+              initialDelaySeconds: 3 # Initial delay for the probe
+              periodSeconds: 3 # Period for the probe
+          readinessProbe: # Readiness probe for the container
+            httpGet: # HTTP GET request for the probe
+              path: / # Path for the probe
+              port: 80 # Port for the probe
+              initialDelaySeconds: 5 # Initial delay for the probe
+              periodSeconds: 5 # Period for the probe
