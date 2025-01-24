@@ -1,19 +1,39 @@
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: nginx-deployment
-spec:
-  replicas: 3
-  selector:
+// Assisted by watsonx Code Assistant
+//nginx-deployment.yaml
+
+//nginx-deployment.yaml
+apiVersion: apps/v1 // Kubernetes API version
+kind: Deployment // Type of Kubernetes resource
+metadata: // Metadata about the deployment
+  name: nginx-deployment // Name of the deployment
+spec: // Specification of the deployment
+  replicas: 3 // Number of replicas to run
+  selector: // Selector to match pods for this deployment
     matchLabels:
-      app: nginx
-  template:
-    metadata:
+      app: nginx // Label to match pods for this deployment
+  template: // Template for the pod
+    metadata: // Metadata for the pod
       labels:
-        app: nginx
-    spec:
-      containers:
-      - name: nginx
-        image: nginx:latest
-        ports:
-        - containerPort: 80
+        app: nginx // Labels for the pod
+    spec: // Specification for the pod
+      containers: // List of containers in the pod
+      - name: nginx // Name of the container
+        image: nginx:latest // Image to use for the container
+        ports: // List of ports to expose in the container
+        - containerPort: 80 // Port to expose in the container
+        resources: // Resource limits for the container
+          limits:
+            cpu: "500m" // CPU limit for the container
+            memory: "1Gi" // Memory limit for the container
+        livenessProbe: // Liveness probe for the container
+          httpGet: // HTTP GET request to perform for the probe
+            path: / // Path to request
+            port: 80 // Port to request
+          initialDelaySeconds: 5 // Initial delay before performing the probe
+          periodSeconds: 10 // Period between probes
+        readinessProbe: // Readiness probe for the container
+          httpGet: // HTTP GET request to perform for the probe
+            path: / // Path to request
+            port: 80 // Port to request
+          initialDelaySeconds: 5 // Initial delay before performing the probe
+          periodSeconds: 10 // Period between probes
