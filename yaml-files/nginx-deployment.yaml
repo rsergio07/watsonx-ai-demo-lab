@@ -1,3 +1,8 @@
+// Assisted by watsonx Code Assistant 
+//nginx-deployment.yaml
+
+// This is a Kubernetes deployment configuration for an Nginx server.
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -12,8 +17,86 @@ spec:
       labels:
         app: nginx
     spec:
+      serviceAccountName: nginx-service-account
+      volumes:
+      - name: nginx-persistent-storage
+        persistentVolumeClaim:
+          claimName: nginx-pvc
       containers:
       - name: nginx
         image: nginx:latest
         ports:
         - containerPort: 80
+        resources:
+          limits:
+            cpu: "500m"
+            memory: "1Gi"
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 5
+          periodSeconds: 5
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 15
+          periodSeconds: 5
+--- ServiceAccount
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: nginx-service-account
+--- ClusterRole
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: nginx-cluster-role
+rules:
+- apiGroups: [""]
+  resources: ["pods"]
+  verbs: ["get", "watch", "list"]
+--- ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: nginx-cluster-role-binding
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: nginx-cluster-role
+subjects:
+- kind: ServiceAccount
+  name: nginx-service-account
+  namespace: default
+--- PersistentVolumeClaim
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: nginx-pvc
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+--- HorizontalPodAutoscaler
+apiVersion: autoscaling/v2beta2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: nginx-hpa
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: nginx-deployment
+  minReplicas: 1
+  maxReplicas: 10
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 50
