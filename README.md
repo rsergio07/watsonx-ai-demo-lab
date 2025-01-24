@@ -38,8 +38,7 @@ Welcome to the AI Watsonx and GitHub Sandbox repository! This repository provide
 ## Getting Started
 
 ### Prerequisites
-- Git
-- Kubernetes
+- GitHub
 - Watsonx Code Assistant
 - Visual Studio Code (or any other code editor)
 
